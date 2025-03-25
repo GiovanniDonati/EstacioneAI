@@ -1,4 +1,7 @@
 package com.gdonati.EstacioneAi.repository;
 
-public class CarsRepository {
+import com.gdonati.EstacioneAi.model.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CarsRepository extends JpaRepository <Car, Long> {
 }
