@@ -21,11 +21,14 @@ public class CarsController {
     @PostMapping("/")
     public Car createCar(@RequestBody Car car){return carsService.createCar(car);}
 
-    @GetMapping("/listcars/")
+    @GetMapping("/listcars")
     public List<Car> getAll(){return carsService.searchAllCars();}
 
-    @GetMapping("/id")
-    public Car seachCar(@RequestBody Long id){return carsService.searchCar(id);}
+    @GetMapping("/{id}")
+    public Car seachCar(@PathVariable Long id){return carsService.searchCar(id);}
+
+    @DeleteMapping("/{id}")
+    public void deleteCar(@PathVariable Long id){carsService.deleteCar(id);}
 
 
 }
