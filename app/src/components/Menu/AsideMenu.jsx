@@ -1,5 +1,3 @@
-import React from "react";
-
 import ButtonMenu from "./ButtonMenu";
 import {
   ChartNoAxesCombinedIcon,
@@ -17,7 +15,7 @@ function AsideMenu() {
       <ButtonMenu to="/dashboard">
         <Component /> Dashboard
       </ButtonMenu>
-      <ButtonMenu to="/spots">
+      <ButtonMenu to="/spot">
         <ParkingCircle /> Spots
       </ButtonMenu>
       <ButtonMenu>

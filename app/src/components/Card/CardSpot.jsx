@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import { PenBox, Trash2Icon } from "lucide-react";
-import React from "react";
 
 function CardSpot() {
-  const value = "03/27/2025";
   const spot = "A-01";
   return (
     <div className="relative flex flex-col pt-10 pl-10 space-y-4 w-fit pr-12 h-fit pb-8 rounded-2xl bg-[#040D12] ">
@@ -17,11 +16,11 @@ function CardSpot() {
           <Trash2Icon className="text-white" />
         </button>
       </div>
-      <InfoSpot>Client: {value}</InfoSpot>
-      <InfoSpot>Car: {value}</InfoSpot>
-      <InfoSpot>Entrada: {value}</InfoSpot>
-      <InfoSpot>Color: {value}</InfoSpot>
-      <InfoSpot>Plate: {value}</InfoSpot>
+      <InfoSpot>Client: Giovanni Donati</InfoSpot>
+      <InfoSpot>Car: Ford Fiesta</InfoSpot>
+      <InfoSpot>Entrada: 03/27/2025</InfoSpot>
+      <InfoSpot>Color: White</InfoSpot>
+      <InfoSpot>Plate: AY0J23K</InfoSpot>
     </div>
   );
 }

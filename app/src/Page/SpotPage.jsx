@@ -1,5 +1,3 @@
-import React from "react";
-
 import Title from "../components/Text/Title";
 
 function SpotPage() {
@@ -13,7 +11,7 @@ function SpotPage() {
             className={`${
               [0, 5, 12, 18, 22].includes(index)
                 ? "bg-green-700"
-                : "bg-gray-800"
+                : "bg-orange-950"
             } flex items-center justify-center text-white font-bold text-2xl rounded-lg h-full`}
           >
             A - {index + 1}
