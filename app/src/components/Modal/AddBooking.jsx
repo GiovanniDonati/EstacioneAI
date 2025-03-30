@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import apiRouter from "../../api/api";
 import { useState } from "react";
 
 import InputModal from "../Text/InputModal";
@@ -7,6 +8,7 @@ import ButtonModal from "../Button/ButtonModal";
 function AddBoooking({ modal }) {
   const [cadastro, setCadastro] = useState({
     client: "",
+    model: "",
     car: "",
     color: "",
     plate: "",
@@ -19,6 +21,21 @@ function AddBoooking({ modal }) {
     }));
   };
 
+  const postData = async () => {
+    try {
+      const response = await apiRouter.post("/car/", {
+        marca: cadastro.car,
+        modelo: cadastro.model,
+        cor: cadastro.color,
+        placa: cadastro.plate,
+      });
+      modal();
+      console.log(response.data);
+    } catch (e) {
+      alert("Error on create car: ", e);
+    }
+  };
+
   return (
     <div className="fixed inset-0 flex items-start justify-center pt-20 bg-black/40">
       <div className="flex flex-col justify-center w-1/3 max-w-xl p-6 space-y-2 bg-white rounded-lg max-lg:w-1/2 max-sm:w-5/6">
@@ -29,9 +46,14 @@ function AddBoooking({ modal }) {
           onChange={(e) => handleChange("client", e.target.value)}
         />
         <InputModal
-          placeholder="Car Model"
+          placeholder="Car"
           value={cadastro.car}
           onChange={(e) => handleChange("car", e.target.value)}
+        />
+        <InputModal
+          placeholder="Model"
+          value={cadastro.model}
+          onChange={(e) => handleChange("model", e.target.value)}
         />
         <InputModal
           placeholder="Color"
@@ -44,7 +66,10 @@ function AddBoooking({ modal }) {
           onChange={(e) => handleChange("plate", e.target.value)}
         />
         <div className="flex justify-around">
-          <ButtonModal bgColor={"bg-green-500 hover:bg-green-700"}>
+          <ButtonModal
+            bgColor={"bg-green-500 hover:bg-green-700"}
+            onClick={postData}
+          >
             Adicionar
           </ButtonModal>
           <ButtonModal

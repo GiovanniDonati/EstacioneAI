@@ -1,7 +1,7 @@
 package com.gdonati.EstacioneAi.controller;
 
 import com.gdonati.EstacioneAi.model.Car;
-import com.gdonati.EstacioneAi.model.service.CarsService;
+import com.gdonati.EstacioneAi.service.CarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,14 +14,12 @@ public class CarsController {
     @Autowired
     private final CarsService carsService;
 
-    public CarsController(CarsService carsService) {
-        this.carsService = carsService;
-    }
+    public CarsController(CarsService carsService) { this.carsService = carsService;}
 
     @PostMapping("/")
     public Car createCar(@RequestBody Car car){return carsService.createCar(car);}
 
-    @GetMapping("/listcars")
+    @GetMapping("/carlist")
     public List<Car> getAll(){return carsService.searchAllCars();}
 
     @GetMapping("/{id}")

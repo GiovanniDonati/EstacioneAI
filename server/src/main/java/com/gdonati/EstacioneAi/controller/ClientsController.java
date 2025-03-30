@@ -1,7 +1,7 @@
 package com.gdonati.EstacioneAi.controller;
 
 import com.gdonati.EstacioneAi.model.Client;
-import com.gdonati.EstacioneAi.model.service.ClientService;
+import com.gdonati.EstacioneAi.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

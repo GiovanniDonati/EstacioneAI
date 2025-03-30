@@ -10,14 +10,15 @@ import lombok.Setter;
 @Table(name = "tb_spot")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class Spot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String group;
+    private String name;
 
-    private int number;
+    private Integer number;
 }

@@ -1,4 +1,4 @@
-package com.gdonati.EstacioneAi.model.service;
+package com.gdonati.EstacioneAi.service;
 
 import com.gdonati.EstacioneAi.model.Car;
 import com.gdonati.EstacioneAi.repository.CarsRepository;
@@ -11,9 +11,7 @@ public class CarsService {
 
     private final CarsRepository carsRepository;
 
-    public CarsService(CarsRepository carsRepository) {
-        this.carsRepository = carsRepository;
-    }
+    public CarsService(CarsRepository carsRepository) { this.carsRepository = carsRepository; }
 
     public List<Car> searchAllCars(){return carsRepository.findAll();}
 

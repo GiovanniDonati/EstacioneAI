@@ -1,4 +1,4 @@
-package com.gdonati.EstacioneAi.model.service;
+package com.gdonati.EstacioneAi.service;
 
 import com.gdonati.EstacioneAi.model.Client;
 import com.gdonati.EstacioneAi.repository.ClientRepository;

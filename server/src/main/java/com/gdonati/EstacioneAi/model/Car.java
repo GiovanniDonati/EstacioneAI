@@ -1,6 +1,5 @@
 package com.gdonati.EstacioneAi.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,8 +8,8 @@ import lombok.Getter;
 
 @Entity
 @Table(name = "tb_car")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter @Setter
 public class Car {
 

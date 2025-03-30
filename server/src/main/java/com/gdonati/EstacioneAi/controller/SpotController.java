@@ -1,8 +1,7 @@
 package com.gdonati.EstacioneAi.controller;
 
 import com.gdonati.EstacioneAi.model.Spot;
-import com.gdonati.EstacioneAi.model.service.SpotService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.gdonati.EstacioneAi.service.SpotService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/spot")
 public class SpotController {
-
-    @Autowired
     private final SpotService spotService;
 
     public SpotController(SpotService spotService) {
