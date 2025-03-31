@@ -2,11 +2,11 @@
 import { PenBox, Trash2Icon } from "lucide-react";
 import apiRouter from "../../api/api";
 
-function CardSpot({ data }) {
-  console.log(data);
+function CardSpot({ data, getData }) {
   const deleteBooking = async () => {
     try {
       await apiRouter.delete(`/car/${data.id}`);
+      getData();
     } catch (e) {
       alert(e);
     }
@@ -28,11 +28,11 @@ function CardSpot({ data }) {
       </div>
       <InfoSpot>Client: Giovanni Donati</InfoSpot>
       <InfoSpot>
-        Car: {data.car} {data.model}
+        Car: {data.marca} {data.modelo}
       </InfoSpot>
       <InfoSpot>Entrada: {data.startTime}</InfoSpot>
-      <InfoSpot>Color: {data.color}</InfoSpot>
-      <InfoSpot>Plate: {data.plate}</InfoSpot>
+      <InfoSpot>Color: {data.cor}</InfoSpot>
+      <InfoSpot>Plate: {data.placa}</InfoSpot>
     </div>
   );
 }

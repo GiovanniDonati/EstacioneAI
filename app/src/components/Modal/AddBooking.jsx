@@ -5,7 +5,7 @@ import { useState } from "react";
 import InputModal from "../Text/InputModal";
 import ButtonModal from "../Button/ButtonModal";
 
-function AddBoooking({ modal }) {
+function AddBoooking({ modal, data }) {
   const [cadastro, setCadastro] = useState({
     client: "",
     model: "",
@@ -30,7 +30,7 @@ function AddBoooking({ modal }) {
         placa: cadastro.plate,
       });
       modal();
-      console.log(response.data);
+      data();
     } catch (e) {
       alert("Error on create car: ", e);
     }

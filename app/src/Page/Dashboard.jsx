@@ -52,11 +52,11 @@ function Dashboard() {
         </div>
         <div className="flex justify-around grow space-x-4">
           {data.map((item) => (
-            <CardSpot key={item.id} data={item} />
+            <CardSpot key={item.id} data={item} getData={getData} />
           ))}
         </div>
       </div>
-      {modalAdd && <AddBooking modal={toggleModal} />}
+      {modalAdd && <AddBooking modal={toggleModal} data={getData} />}
     </>
   );
 }

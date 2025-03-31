@@ -20,8 +20,8 @@ public class CarsController {
 
     public CarsController(CarsService carsService) { this.carsService = carsService;}
 
-    @PostMapping
-    public Car createCar(@RequestBody Car car){System.out.println("Recebendo carro: {}" + car); return carsService.createCar(car);}
+    @PostMapping("/")
+    public Car createCar(@RequestBody Car car){return carsService.createCar(car);}
 
     @GetMapping("/carlist")
     public List<Car> getAll(){return carsService.searchAllCars();}
