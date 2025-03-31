@@ -1,16 +1,16 @@
 package com.gdonati.EstacioneAi.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Getter;
+import lombok.*;
+
 
 @Entity
 @Table(name = "tb_car")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Car {
 
     @Id
