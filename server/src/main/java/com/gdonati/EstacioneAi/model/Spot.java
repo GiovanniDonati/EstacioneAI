@@ -19,7 +19,11 @@ public class Spot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private char line;
 
     private Integer number;
+
+    @OneToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 }

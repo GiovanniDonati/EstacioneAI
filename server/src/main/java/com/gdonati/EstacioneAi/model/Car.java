@@ -23,5 +23,10 @@ public class Car {
 
     private String cor;
 
+    @Column(unique = true)
     private String placa;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 }
