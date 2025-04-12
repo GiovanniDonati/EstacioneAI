@@ -27,9 +27,18 @@ public class SpotService {
         Spot spot = spotRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Spot não encontrado"));
 
-        Car car = carsService.searchCar(car_id);
-
-        spot.setCar(car);
+        try {
+            Car car = carsService.searchCar(car_id);
+        }
+        catch (RuntimeException e) {
+            throw new RuntimeException("Carro não encontrado");
+        }
+        try {
+            spot.setCar(car_id);
+            System.out.println("Carro atualizado com sucesso");
+        } catch (Exception e) {
+            throw new RuntimeException("Erro ao atualizar o carro no estacionamento");
+        }
 
         return spotRepository.save(spot);
     }

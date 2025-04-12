@@ -24,6 +24,10 @@ public class Spot {
     private Integer number;
 
     @OneToOne
-    @JoinColumn(name = "car_id")
-    private Car car;
+    @JoinColumn(name = "car_id", nullable = true)
+    private Long car_id;
+
+    public void setCar(Long car_id) {
+        this.car_id = car_id;
+    }
 }

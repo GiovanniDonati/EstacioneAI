@@ -24,6 +24,11 @@ public class SpotController {
     @GetMapping("/{id}")
     public Spot searchSpot(@PathVariable Long id){return spotService.searchSpot(id);}
 
+    @PatchMapping("/{id}")
+    public Spot updateSpotCar(@PathVariable Long id, @RequestBody Long car_id){
+        return spotService.updateSpotCar(id, car_id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteSpot(@PathVariable Long id){spotService.deleteSpot(id);}
 
