@@ -1,5 +1,6 @@
 package com.gdonati.EstacioneAi.controller;
 
+import com.gdonati.EstacioneAi.dto.CarDto;
 import com.gdonati.EstacioneAi.model.Spot;
 import com.gdonati.EstacioneAi.service.SpotService;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,8 @@ public class SpotController {
     public Spot searchSpot(@PathVariable Long id){return spotService.searchSpot(id);}
 
     @PatchMapping("/{id}")
-    public Spot updateSpotCar(@PathVariable Long id, @RequestBody Long car_id){
-        return spotService.updateSpotCar(id, car_id);
+    public String updateSpotCar(@PathVariable Long id, @RequestBody CarDto dto){
+        return spotService.updateSpotCar(id, dto.car_id());
     }
 
     @DeleteMapping("/{id}")

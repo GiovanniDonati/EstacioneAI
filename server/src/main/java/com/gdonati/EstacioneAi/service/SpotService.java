@@ -23,24 +23,27 @@ public class SpotService {
 
     public Spot createSpot(Spot spot){return spotRepository.save(spot);}
 
-    public Spot updateSpotCar(Long id, Long car_id){
+    public String updateSpotCar(Long id, Long car_id){
         Spot spot = spotRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Spot não encontrado"));
 
         try {
-            Car car = carsService.searchCar(car_id);
+            carsService.searchCar(car_id);
         }
         catch (RuntimeException e) {
             throw new RuntimeException("Carro não encontrado");
         }
         try {
-            spot.setCar(car_id);
+            Car car = carsService.searchCar(car_id);
+            spot.setCar(car);
             System.out.println("Carro atualizado com sucesso");
         } catch (Exception e) {
             throw new RuntimeException("Erro ao atualizar o carro no estacionamento");
         }
 
-        return spotRepository.save(spot);
+        spotRepository.save(spot);
+
+        return "Carro atualizado com sucesso";
     }
 
     public Spot searchSpot(Long id){return spotRepository.findById(id).orElse(null);}

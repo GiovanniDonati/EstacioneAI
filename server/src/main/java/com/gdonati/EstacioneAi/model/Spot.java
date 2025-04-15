@@ -25,9 +25,5 @@ public class Spot {
 
     @OneToOne
     @JoinColumn(name = "car_id", nullable = true)
-    private Long car_id;
-
-    public void setCar(Long car_id) {
-        this.car_id = car_id;
-    }
+    private Car car;
 }
